@@ -1,0 +1,132 @@
+@use "./abstract/_colors";
+@use "./abstract/_util";
+@use "./abstract/_font";
+
+.todoListContainer {
+  @include util.flex-center(column);
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  gap: 3rem;
+}
+.header {
+  @include util.flex-center(row);
+  font-size: font.$m-font;
+  width: 100%;
+  padding: 2rem 0;
+  background-color: colors.$primary;
+}
+.inputContainer {
+  @include util.flex-center(row);
+  width: 100%;
+  height: fit-content;
+
+  & > input {
+    width: 50%;
+    height: 2em;
+    border-radius: 100vh;
+    padding: 0 1em;
+    font-size: font.$m-font;
+    border: 2px solid colors.$primary;
+    outline: none;
+  }
+
+  & > button {
+    height: 100%;
+    font-size: font.$m-font;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    background-color: colors.$primary;
+    color: white;
+    border: none;
+  }
+
+  & > button:hover {
+    background-color: colors.$primary-dark;
+  }
+}
+
+.listContainer {
+  @include util.flex-center(row);
+  width: 100%;
+}
+.listDisplay {
+  @include util.flex-center(column);
+  width: 50%;
+  background-color: grey;
+  padding: 1em;
+  border-radius: 2vw;
+
+  & > h2 {
+    @include util.flex-center(row);
+    font-size: font.$xxl-font;
+    width: 100%;
+    background-color: colors.$primary-dark;
+    border-radius: 1vw;
+  }
+
+  & > button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    font-size: font.$l-font;
+    border-radius: 1vw;
+    border: none;
+    color: white;
+    background-color: colors.$primary;
+    font-weight: bold;
+  }
+
+  & > button:hover {
+    background-color: colors.$primary-dark;
+  }
+}
+
+.listItems {
+  width: 100%;
+}
+.todoItems {
+  @include util.flex-center(row);
+  width: 100%;
+  padding: 0.5em 1em;
+  background-color: colors.$primary;
+  font-size: font.$m-font;
+  border-radius: 2rem;
+  margin: 1rem 0;
+
+  & > h3 {
+    word-break: break-word;
+    flex: 1;
+  }
+
+  & > button {
+    height: fit-content;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 100vw;
+    background-color: transparent;
+    color: white;
+    font-size: font.$s-font;
+    font-weight: bolder;
+    border: 2px solid white;
+    outline: none;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+
+  & > button:hover {
+    background-color: colors.$primary-dark;
+  }
+}
+.empty {
+  @include util.flex-center(row);
+  width: 100%;
+  padding: 0.5em 1em;
+  background-color: colors.$primary;
+  font-size: font.$m-font;
+  border-radius: 2rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
